@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}.cls-2,.cls-4{fill:none}.cls-2{stroke:#fff;stroke-width:2px}.cls-3{stroke:none}
+        </style>
+    </defs>
+    <g id="linkedin" transform="translate(-445 -429)">
+        <g id="linkedin-logo" transform="translate(455 428.777)">
+            <path id="LinkedIn-2" d="M30 27.134v11.091h-6.43V27.876c0-2.6-.93-4.374-3.257-4.374a3.518 3.518 0 0 0-3.3 2.352 4.4 4.4 0 0 0-.213 1.568v10.8h-6.432s.087-17.527 0-19.343H16.8v2.742c-.013.021-.03.043-.042.062h.042v-.062a6.386 6.386 0 0 1 5.8-3.2c4.228.007 7.4 2.771 7.4 8.713zM3.64 9.558a3.352 3.352 0 1 0-.085 6.685H3.6a3.353 3.353 0 1 0 .04-6.685zM.382 38.225h6.43V18.882H.382z" class="cls-1" data-name="LinkedIn"/>
+        </g>
+        <g id="linkedin-3" class="cls-2" data-name="linkedin">
+            <path d="M0 0h50v50H0z" class="cls-3" transform="translate(445 429)"/>
+            <path d="M1 1h48v48H1z" class="cls-4" transform="translate(445 429)"/>
+        </g>
+    </g>
+</svg>

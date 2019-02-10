@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}.cls-2,.cls-4{fill:none}.cls-2{stroke:#fff;stroke-width:2px}.cls-3{stroke:none}
+        </style>
+    </defs>
+    <g id="wordpress" transform="translate(-585 -429)">
+        <g id="wordpress-logo-of-a-letter-in-a-circle" transform="translate(593.902 437.798)">
+            <path id="WordPress__x28_alt_x29_" d="M1.924 8.317A16.091 16.091 0 0 1 16.262 0a16.383 16.383 0 0 1 10.555 4.147 3.748 3.748 0 0 0-2.582.528 3.634 3.634 0 0 0-.063 6.274c1.687 1.054 2.287 3.694 2.23 5.306s-3.921 9.03-3.921 9.03l-3.764-12.924s-.13-.907-.13-1.168a1.57 1.57 0 0 1 .312-.964c.14-.153.354-.476.607-.476h1.784V8.317h-9.7v1.437h.3c.318 0 .628.427.928.734a15.475 15.475 0 0 1 1.34 3.168l1.41 4.645-3.039 7.023L9.2 11.288s.1-.962.3-1.125c.131-.112.333-.409.567-.409h.092V8.317zm1.9 2.439s-.784-1-1.617-1h-.844A16.367 16.367 0 0 0 .1 16.172a16.04 16.04 0 0 0 9.886 14.784zm26.347-2.567a10.382 10.382 0 0 1-.356 5.17c-1.563 5.06-5.431 14.162-6.929 17.63a16.033 16.033 0 0 0 9.539-14.63 15.871 15.871 0 0 0-2.254-8.17zM16.588 21.851l-4.133 10.095a16.294 16.294 0 0 0 7.742-.029z" class="cls-1"/>
+        </g>
+        <g id="wordpress-2" class="cls-2" data-name="wordpress">
+            <path d="M0 0h50v50H0z" class="cls-3" transform="translate(585 429)"/>
+            <path d="M1 1h48v48H1z" class="cls-4" transform="translate(585 429)"/>
+        </g>
+    </g>
+</svg>
