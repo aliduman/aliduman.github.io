@@ -1,16 +1,19 @@
-html,body{
+html, body {
     height: 100%;
 }
-body{
+
+body {
     font-family: 'Karla', sans-serif;
     background: #181743 url("images/aliduman.png") right top no-repeat;
     -webkit-background-size: contain;
     background-size: contain;
 }
-h1,h2{
+
+h1, h2 {
     color: #ffffff;
 }
-#name{
+
+#name {
     font-size: 88px;
     font-weight: bold;
     font-style: normal;
@@ -22,7 +25,9 @@ h1,h2{
     -webkit-animation-delay: 1s;
     animation-delay: 1s;
 }
-#title{
+
+#title {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 34px;
     font-weight: normal;
     font-style: normal;
@@ -35,28 +40,34 @@ h1,h2{
     -webkit-animation-delay: 1.5s;
     animation-delay: 1.5s;
 }
-.nav li{
+
+.nav li {
     margin-right: 20px;
 }
-.nav li a{
+
+.nav li a {
     display: block;
     height: 100%;
     width: 100%;
     cursor: pointer;
 }
-.nav li.facebook{
+
+.nav li.facebook {
     -webkit-animation-delay: 3s;
     animation-delay: 3s;
 }
-.nav li.twitter{
+
+.nav li.twitter {
     -webkit-animation-delay: 3.5s;
     animation-delay: 3.5s;
 }
-.nav li.linkedin{
+
+.nav li.linkedin {
     -webkit-animation-delay: 4s;
     animation-delay: 4s;
 }
-.nav li.wordpress{
+
+.nav li.wordpress {
     -webkit-animation-delay: 4.5s;
     animation-delay: 4.5s;
 }
