@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rtk ls *)",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/aliduman/www/aliduman.github.io/images/aliduman.png)",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:tr.linkedin.com)"
+    ]
+  }
+}
