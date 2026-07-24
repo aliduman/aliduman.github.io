@@ -365,14 +365,9 @@ ScrollTrigger.create({
 const style = document.createElement('style');
 style.textContent = `
     .nav.scrolled {
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: var(--color-bg);
         backdrop-filter: blur(10px);
-        mix-blend-mode: normal;
-    }
-
-    .nav.scrolled .nav-logo,
-    .nav.scrolled .nav-link {
-        color: var(--color-text);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 `;
 document.head.appendChild(style);
