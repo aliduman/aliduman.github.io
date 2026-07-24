@@ -1,6 +1,35 @@
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
+// Dark Mode Toggle
+const themeToggle = document.querySelector('.theme-toggle');
+const html = document.documentElement;
+
+// Check for saved theme preference or default to system preference
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (savedTheme) {
+    html.setAttribute('data-theme', savedTheme);
+} else if (systemPrefersDark) {
+    html.setAttribute('data-theme', 'dark');
+}
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    // Animate theme toggle
+    gsap.to(themeToggle, {
+        rotation: '+=180',
+        duration: 0.5,
+        ease: 'power2.out'
+    });
+});
+
 // Custom Cursor
 const cursor = document.querySelector('.cursor');
 const cursorFollower = document.querySelector('.cursor-follower');
@@ -91,13 +120,25 @@ function initHeroAnimations() {
 // Initialize hero animations
 initHeroAnimations();
 
-// Smooth Scroll
+// Smooth Scroll - Fixed
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
 
+        // Skip if it's just # (like back to top)
+        if (href === '#') {
+            e.preventDefault();
+            gsap.to(window, {
+                duration: 2,
+                scrollTo: { y: 0 },
+                ease: 'power4.inOut'
+            });
+            return;
+        }
+
+        const target = document.querySelector(href);
         if (target) {
+            e.preventDefault();
             gsap.to(window, {
                 duration: 1.5,
                 scrollTo: {
@@ -108,6 +149,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// Projects Slider
+const projectsSwiper = new Swiper('.projects.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 60,
+    speed: 800,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 1.2,
+            spaceBetween: 80,
+        },
+        1024: {
+            slidesPerView: 1.5,
+            spaceBetween: 100,
+        },
+    },
+    mousewheel: {
+        forceToAxis: true,
+    },
+    keyboard: {
+        enabled: true,
+    },
 });
 
 // Parallax Effect for Hero
@@ -132,35 +205,38 @@ gsap.to('.hero-description', {
     y: 150
 });
 
-// Projects Scroll Animations
+// Projects Scroll Animations - Updated for Swiper
 const projects = document.querySelectorAll('.project');
 
-projects.forEach((project, index) => {
-    // Project container fade in
-    gsap.to(project, {
-        scrollTrigger: {
-            trigger: project,
-            start: 'top 80%',
-            end: 'top 50%',
-            scrub: 1
-        },
-        opacity: 1,
-        y: 0,
-        duration: 1
-    });
+// Fade in animation on section enter
+gsap.from('.featured', {
+    scrollTrigger: {
+        trigger: '.featured',
+        start: 'top 70%',
+        end: 'top 40%',
+        scrub: 1
+    },
+    opacity: 0,
+    y: 60
+});
 
-    // Project image parallax
+// Individual project hover effects
+projects.forEach((project) => {
     const projectImage = project.querySelector('.project-image img');
-    gsap.to(projectImage, {
-        scrollTrigger: {
-            trigger: project,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1
-        },
-        y: -50,
-        ease: 'none'
-    });
+
+    // Subtle parallax for visible slides
+    if (projectImage) {
+        gsap.to(projectImage, {
+            scrollTrigger: {
+                trigger: '.featured',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1
+            },
+            y: -30,
+            ease: 'none'
+        });
+    }
 });
 
 // Capabilities Section Animations
