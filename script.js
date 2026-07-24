@@ -115,6 +115,14 @@ function initHeroAnimations() {
         opacity: 1,
         duration: 0.8
     }, '-=0.5');
+
+    // Animate hero metrics
+    tl.to('.hero-metrics', {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.15
+    }, '-=0.6');
 }
 
 // Initialize hero animations
@@ -361,13 +369,17 @@ ScrollTrigger.create({
     }
 });
 
-// Add scrolled class styles
+// Add scrolled class styles with dark mode support
 const style = document.createElement('style');
 style.textContent = `
     .nav.scrolled {
         background-color: var(--color-bg);
         backdrop-filter: blur(10px);
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="dark"] .nav.scrolled {
+        box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1);
     }
 `;
 document.head.appendChild(style);
