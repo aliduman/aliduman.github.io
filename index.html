@@ -21,15 +21,22 @@
             <li><a href="#about" class="nav-link" data-text="About">About</a></li>
             <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
         </ul>
-        <button class="theme-toggle" aria-label="Toggle theme">
-            <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M10 1V3M10 17V19M19 10H17M3 10H1M16.364 16.364L14.95 14.95M5.05 5.05L3.636 3.636M16.364 3.636L14.95 5.05M5.05 14.95L3.636 16.364" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-            <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
+        <div class="nav-controls">
+            <button class="lang-toggle" aria-label="Toggle language">
+                <span class="lang-option active" data-lang="en">EN</span>
+                <span class="lang-divider">|</span>
+                <span class="lang-option" data-lang="tr">TR</span>
+            </button>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M10 1V3M10 17V19M19 10H17M3 10H1M16.364 16.364L14.95 14.95M5.05 5.05L3.636 3.636M16.364 3.636L14.95 5.05M5.05 14.95L3.636 16.364" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -338,6 +345,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
