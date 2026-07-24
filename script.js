@@ -1,6 +1,157 @@
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
+// Language Switcher
+let currentLang = localStorage.getItem('language') || 'en';
+
+function updateContent(lang) {
+    const t = translations[lang];
+
+    // Navigation
+    document.querySelectorAll('.nav-link').forEach((link, index) => {
+        const keys = ['work', 'about', 'contact'];
+        link.textContent = t.nav[keys[index]];
+        link.setAttribute('data-text', t.nav[keys[index]]);
+    });
+
+    // Hero Section
+    document.querySelector('.hero-tagline .tag:nth-child(1)').textContent = t.hero.tagline1;
+    document.querySelector('.hero-tagline .tag:nth-child(2)').textContent = t.hero.tagline2;
+    document.querySelectorAll('.hero-title .word')[0].textContent = t.hero.title1;
+    document.querySelectorAll('.hero-title .word')[1].textContent = t.hero.title2;
+    document.querySelectorAll('.hero-title .word')[2].textContent = t.hero.title3;
+    document.querySelector('.hero-description p').textContent = t.hero.description;
+    document.querySelector('.scroll-indicator span').textContent = t.hero.scrollText;
+
+    // Hero Metrics
+    const metricTitles = document.querySelectorAll('.metric-content h4');
+    const metricDescs = document.querySelectorAll('.metric-content p');
+    metricTitles[0].textContent = t.metrics.software.title;
+    metricDescs[0].textContent = t.metrics.software.desc;
+    metricTitles[1].textContent = t.metrics.uiux.title;
+    metricDescs[1].textContent = t.metrics.uiux.desc;
+    metricTitles[2].textContent = t.metrics.app.title;
+    metricDescs[2].textContent = t.metrics.app.desc;
+
+    // Projects Section
+    const projectsSection = document.querySelector('.featured .section-number');
+    const projectsTitle = document.querySelector('.featured .section-title');
+    if (projectsSection) projectsSection.textContent = t.projects.sectionNumber;
+    if (projectsTitle) projectsTitle.textContent = t.projects.sectionTitle;
+
+    // Individual Projects
+    const projects = document.querySelectorAll('.project');
+    const projectKeys = ['project1', 'project2', 'project3', 'project4'];
+    projects.forEach((project, index) => {
+        const key = projectKeys[index];
+        const projectData = t.projects[key];
+
+        project.querySelector('.project-year').textContent = projectData.year;
+        project.querySelector('.project-tags').textContent = projectData.tags;
+        project.querySelector('.project-title').textContent = projectData.title;
+        project.querySelector('.project-description').textContent = projectData.description;
+        project.querySelector('.link-arrow').textContent = projectData.link + ' →';
+    });
+
+    // Capabilities Section
+    const capSection = document.querySelector('.capabilities .section-number');
+    const capTitle = document.querySelector('.capabilities .section-title');
+    if (capSection) capSection.textContent = t.capabilities.sectionNumber;
+    if (capTitle) capTitle.textContent = t.capabilities.sectionTitle;
+
+    const capabilities = document.querySelectorAll('.capability');
+    const capKeys = ['frontend', 'design', 'creative', 'performance'];
+    capabilities.forEach((cap, index) => {
+        const key = capKeys[index];
+        cap.querySelector('h3').textContent = t.capabilities[key].title;
+        cap.querySelector('p').textContent = t.capabilities[key].description;
+    });
+
+    // About Section
+    const aboutSection = document.querySelector('.about .section-number');
+    const aboutTitle = document.querySelector('.about .section-title');
+    if (aboutSection) aboutSection.textContent = t.about.sectionNumber;
+    if (aboutTitle) aboutTitle.textContent = t.about.sectionTitle;
+
+    const aboutText = document.querySelectorAll('.about-text p');
+    aboutText[0].textContent = t.about.large;
+    aboutText[1].textContent = t.about.p1;
+    aboutText[2].textContent = t.about.p2;
+
+    const statLabels = document.querySelectorAll('.stat-label');
+    statLabels[0].textContent = t.about.stats.experience;
+    statLabels[1].textContent = t.about.stats.projects;
+    statLabels[2].textContent = t.about.stats.clients;
+
+    // Contact Section
+    const contactSection = document.querySelector('.contact .section-number');
+    const contactTitle = document.querySelector('.contact .section-title');
+    if (contactSection) contactSection.textContent = t.contact.sectionNumber;
+    if (contactTitle) contactTitle.textContent = t.contact.sectionTitle;
+
+    document.querySelector('.contact-text').textContent = t.contact.text;
+
+    const contactLinks = document.querySelectorAll('.contact-link');
+    const contactKeys = ['email', 'linkedin', 'github', 'twitter'];
+    contactLinks.forEach((link, index) => {
+        const key = contactKeys[index];
+        link.querySelector('.link-label').textContent = t.contact[key].label;
+        link.querySelector('.link-value').textContent = t.contact[key].value;
+    });
+
+    // Footer
+    document.querySelectorAll('.footer p')[0].textContent = '© ' + t.footer.copyright;
+    document.querySelector('.footer-link').textContent = t.footer.backToTop + ' ↑';
+
+    // Update HTML lang attribute
+    document.documentElement.setAttribute('lang', lang);
+}
+
+// Language toggle functionality
+const langOptions = document.querySelectorAll('.lang-option');
+
+langOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        const lang = option.getAttribute('data-lang');
+
+        if (lang !== currentLang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+
+            // Update active state
+            langOptions.forEach(opt => opt.classList.remove('active'));
+            option.classList.add('active');
+
+            // Update content with animation
+            gsap.to('body', {
+                opacity: 0.7,
+                duration: 0.2,
+                onComplete: () => {
+                    updateContent(lang);
+                    gsap.to('body', {
+                        opacity: 1,
+                        duration: 0.3
+                    });
+                }
+            });
+        }
+    });
+});
+
+// Initialize language on page load
+document.addEventListener('DOMContentLoaded', () => {
+    updateContent(currentLang);
+
+    // Set active language option
+    langOptions.forEach(option => {
+        if (option.getAttribute('data-lang') === currentLang) {
+            option.classList.add('active');
+        } else {
+            option.classList.remove('active');
+        }
+    });
+});
+
 // Dark Mode Toggle
 const themeToggle = document.querySelector('.theme-toggle');
 const html = document.documentElement;
