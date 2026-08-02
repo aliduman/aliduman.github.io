@@ -1,532 +1,465 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#181743">
-    <meta name="description" content="Ali Duman — Front End Developer. Modern web arayüzleri tasarlıyor ve geliştiriyorum.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#fafafa">
+    <meta name="description" content="Ali Duman — 14+ yıllık deneyime sahip İstanbul merkezli Front End Developer. Ölçeklenebilir ürün arayüzleri, modernizasyon ve tasarım sistemleri.">
     <meta property="og:title" content="Ali Duman — Front End Developer">
-    <meta property="og:description" content="Modern web arayüzleri tasarlıyor ve geliştiriyorum.">
-    <meta property="og:image" content="images/aliduman_profile_400x400.jpg">
+    <meta property="og:description" content="Ölçeklenebilir, hızlı ve kullanıcı odaklı web deneyimleri geliştiriyorum.">
+    <meta property="og:image" content="images/ali-duman-portrait-1200.jpg">
     <meta property="og:type" content="website">
     <title>Ali Duman — Front End Developer</title>
-    <link rel="icon" type="image/jpeg" href="images/aliduman_profile_400x400.jpg">
+    <script>
+        (() => {
+            const savedTheme = localStorage.getItem("theme");
+            const preferredTheme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            const savedLanguage = localStorage.getItem("language");
+            const preferredLanguage = navigator.language.toLowerCase().startsWith("tr") ? "tr" : "en";
+            document.documentElement.dataset.theme = savedTheme || preferredTheme;
+            document.documentElement.lang = savedLanguage || preferredLanguage;
+            document.documentElement.dataset.language = savedLanguage || preferredLanguage;
+        })();
+    </script>
+    <link rel="icon" href="images/aliduman_profile_400x400.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
 
-<canvas id="bg-canvas" aria-hidden="true"></canvas>
-
-<div class="bg-orbs" aria-hidden="true">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-</div>
-
-<main class="page">
-    <section class="card">
-        <div class="avatar">
-            <img src="images/aliduman_profile_400x400.jpg" alt="Ali Duman">
-            <span class="status" title="Çalışmalara açık"></span>
-        </div>
-
-        <h1 class="name">Ali Duman</h1>
-        <p class="title">Front End Developer</p>
-        <p class="bio">Kullanıcı deneyimine dokunan; yeni başlayan ya da olgunlaşmış, her ölçekte heyecan verici projelerde çalışmaktan keyif alıyorum. En iyi sonuca ulaşmak için güncel teknolojileri yakından takip ediyor, her ihtiyaca en uygun çözümü hayata geçirmeye odaklanıyorum.</p>
-
-        <ul class="tags" aria-label="Yetenekler">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Vue.js</li>
-            <li>Angular</li>
-            <li>React</li>
-        </ul>
-
-        <nav class="socials" aria-label="Sosyal medya">
-            <a class="social" href="https://github.com/aliduman" title="GitHub" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2.01-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.95.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.69.41.35.78 1.05.78 2.12 0 1.53-.01 2.77-.01 3.14 0 .31.21.68.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z"/>
-                </svg>
-            </a>
-            <a class="social" href="https://www.linkedin.com/in/ali-duman-904b2731/" title="LinkedIn" target="_blank" rel="noopener">
-                <img src="images/linkedin.svg" alt="" aria-hidden="true">
-            </a>
-            <a class="social" href="https://twitter.com/alidumandev" title="Twitter" target="_blank" rel="noopener">
-                <img src="images/twitter.svg" alt="" aria-hidden="true">
-            </a>
-            <a class="social" href="https://www.facebook.com/aliduman.dev" title="Facebook" target="_blank" rel="noopener">
-                <img src="images/facebook.svg" alt="" aria-hidden="true">
-            </a>
-            <a class="social" href="https://alidumandev.wordpress.com/" title="WordPress" target="_blank" rel="noopener">
-                <img src="images/wordpress.svg" alt="" aria-hidden="true">
-            </a>
-        </nav>
-
-        <div class="actions">
-            <a class="cta" href="mailto:alidumanpr@gmail.com">
-                <span data-i18n="cta.contact">İletişime Geç</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill="currentColor" d="M5 12h12l-4-4 1.4-1.4L20.8 12l-6.4 5.4L13 16l4-4H5z"/>
-                </svg>
-            </a>
-            <button class="cta cta-ghost" type="button" id="open-about" aria-haspopup="dialog" aria-controls="about-modal">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm3 12H9v-1c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v1Z"/>
-                </svg>
-                <span data-i18n="cta.about">Hakkımda</span>
+    <header class="site-header">
+        <a class="brand" href="#hero" aria-label="Ali Duman, ana sayfa">Ali Duman</a>
+        <div class="header-actions">
+            <nav class="site-nav" id="site-nav" aria-label="Ana menü">
+                <a href="#about">Hakkımda</a>
+                <a href="#services">Uzmanlık</a>
+                <a href="#work">Çalışmalar</a>
+                <a href="#experience">Özgeçmiş</a>
+                <a href="#contact">İletişim</a>
+            </nav>
+            <button class="theme-toggle" type="button" aria-label="Koyu temaya geç" aria-pressed="false">
+                <span class="theme-toggle-track" aria-hidden="true">
+                    <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+                    <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4 8.5 8.5 0 1 0 20 15.2Z"/></svg>
+                    <span class="theme-orb"></span>
+                </span>
+            </button>
+            <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menüyü aç/kapat">
+                <span class="menu-label">Menu</span>
+                <span class="menu-icon" aria-hidden="true"><span></span><span></span></span>
             </button>
         </div>
-    </section>
+    </header>
 
-    <footer class="footer">© <span id="year"></span> Ali Duman</footer>
-</main>
-
-<!-- About modal -->
-<div class="modal" id="about-modal" data-lang="tr" hidden>
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="about-title">
-        <header class="modal-header">
-            <h2 id="about-title" class="modal-title">
-                <span data-tr>Hakkımda</span>
-                <span data-en>About</span>
-            </h2>
-            <div class="lang-toggle" role="tablist" aria-label="Language">
-                <button type="button" data-set-lang="tr" class="active" role="tab">TR</button>
-                <button type="button" data-set-lang="en" role="tab">EN</button>
+    <main id="main">
+        <section class="hero" id="hero" aria-label="Giriş">
+            <canvas class="hero-canvas" aria-hidden="true"></canvas>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="hero-meta reveal">
+                        <span>İstanbul, Türkiye</span>
+                        <span class="hero-separator" aria-hidden="true">—</span>
+                        <span>2012'den beri profesyonel</span>
+                    </p>
+                    <h1 class="hero-title">
+                        <span class="line reveal">Front End</span>
+                        <span class="line reveal">Developer</span>
+                    </h1>
+                    <p class="hero-lead reveal">14+ yıllık deneyimimle karmaşık ürün ihtiyaçlarını sade, sürdürülebilir ve kullanıcı odaklı web deneyimlerine dönüştürüyorum.</p>
+                    <div class="hero-actions reveal">
+                        <a class="btn btn-primary" href="#work">Çalışmaları gör</a>
+                        <a class="btn btn-ghost" href="mailto:alidumanpr@gmail.com">İletişime geç</a>
+                    </div>
+                </div>
+                <div class="hero-portrait reveal">
+                    <button class="portrait-link" type="button" aria-label="Ali Duman portresini büyüt" aria-expanded="false">
+                        <img
+                            src="images/ali-duman-portrait-800.jpg"
+                            srcset="images/ali-duman-portrait-800.jpg 800w, images/ali-duman-portrait-1200.jpg 1200w"
+                            sizes="(max-width: 900px) 80vw, 520px"
+                            data-original="images/ali-duman-portrait-original.jpg"
+                            alt="Ali Duman, dizüstü bilgisayarının arkasında"
+                            fetchpriority="high"
+                            width="900"
+                            height="1200">
+                        <span class="portrait-open" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                    </button>
+                </div>
             </div>
-            <button type="button" class="modal-close" data-close aria-label="Kapat / Close">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.3 5.71 12 12.01l-6.3-6.3-1.4 1.4 6.3 6.3-6.3 6.3 1.4 1.41L12 14.83l6.3 6.3 1.4-1.42-6.3-6.3 6.3-6.3z"/></svg>
-            </button>
-        </header>
-
-        <div class="modal-body">
-            <!-- Turkish content -->
-            <div class="lang-content lang-tr">
-                <section class="block">
-                    <p class="lead">İstanbul'da yaşayan, kendini sürekli geliştirmeye açık bir ön yüz geliştiricisiyim. Web sitesi tasarımı ve düzenlemesi, web uygulamalarının kodlama ve test aşamaları ile çevrimiçi iş girişimlerinin planlanması ve uygulanması konularında 12 yıla yakın eğitim ve kurumsal deneyime sahibim; bu süreçte tasarım ve UX alanında ekiplere ve projelere destek verdim.</p>
-                    <p class="lead">Geliştirici çantamda: Angular, Vue.js, React, Ionic, jQuery, Bootstrap ve Semantic UI.</p>
-                </section>
-
-                <section class="block">
-                    <h3 class="block-title">Deneyim</h3>
-                    <ol class="timeline">
-                        <li>
-                            <div class="tl-head">
-                                <span class="tl-role">sahibinden.com — Frontend Developer</span>
-                                <span class="tl-date">Tem 2021 — Devam ediyor</span>
-                            </div>
-                            <ul>
-                                <li>Birden fazla ekibin sahipliğindeki domainlerde uçtan uca ön yüz geliştirme çalışmaları yürüttüm; çevik metodolojilerle sürdürülebilir çözümler sundum.</li>
-                                <li>Eski AngularJS tabanlı projelerin güncel Angular sürümüne göç ettirilmesi sürecinde aktif rol üstlendim.</li>
-                                <li>Makine öğrenmesi destekli Sanal Tur uygulamasının kullanıcı arayüzünü tasarlayıp geliştirdim.</li>
-                                <li>Sanal Tur ürününün ayrı bir marka altında SaaS modeline dönüştürülmesi sürecini yönlendirdim; uygulamayı Vue.js ile sıfırdan yeniden yapılandırdım.</li>
-                                <li>Sahibinden Design System dönüşümü kapsamında geliştirilen kurumsal Web Components kütüphanesine katkı sağladım.</li>
-                                <li>Yapay zekâ destekli fotoğraf düzenleme ürünü Sahideko AI'nın tüm arayüz geliştirme süreçlerini üstlendim.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="tl-head">
-                                <span class="tl-role">Garaj Sepeti — Front End Developer</span>
-                                <span class="tl-date">Tem 2019 — Tem 2021</span>
-                            </div>
-                            <ul>
-                                <li>Araba.com, Tasit.com ve Garaj Sepeti Marketplace ürünlerinin ön yüz geliştirme süreçlerini yönettim.</li>
-                                <li>Symfony Blade şablonları üzerinde HTML, CSS, JavaScript ve jQuery ile çalıştım; mevcut özelliklerin sürdürülmesi ve hata düzeltmeleri için ReactJS kullandım.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="tl-head">
-                                <span class="tl-role">Aeccion Bilişim A.Ş — Front End Developer</span>
-                                <span class="tl-date">May 2017 — Tem 2019</span>
-                            </div>
-                            <ul>
-                                <li>AngularJS tabanlı bir e-ticaret uygulaması, Angular 2–7 sürümleriyle bir CMS uygulaması ve çeşitli SPA web uygulamaları geliştirdim.</li>
-                                <li>İnşaat ve mimari tasarım sektörlerindeki kurumların marka kimliği projelerinde web sitelerini sıfırdan tasarlayıp geliştirdim.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="tl-head">
-                                <span class="tl-role">Erkam Medya Bilişim Hizmetleri — Web Developer</span>
-                                <span class="tl-date">May 2015 — May 2017</span>
-                            </div>
-                            <ul>
-                                <li>Kurumsal ERP web uygulamalarının ön yüz geliştirme süreçlerine katkı sağladım.</li>
-                                <li>Kullanılan teknolojiler: HTML, CSS, SCSS, Bootstrap, JavaScript, jQuery, WP-REST API, Ionic ve Angular 1.x.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="tl-head">
-                                <span class="tl-role">KALITE GROUP — Front End Developer</span>
-                                <span class="tl-date">Eyl 2014 — May 2015</span>
-                            </div>
-                            <ul>
-                                <li>Ajans bünyesinde mockup arayüzlerinin hazırlanması ve PSD tasarımlarının HTML, CSS ve JavaScript ile koda dönüştürülmesini gerçekleştirdim.</li>
-                                <li>Çapraz tarayıcı uyumluluk testlerini yürüttüm; hız ve performans optimizasyonlarına yönelik raporlar hazırladım.</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </section>
-
-                <section class="block">
-                    <h3 class="block-title">Eğitim</h3>
-                    <ol class="timeline">
-                        <li>
-                            <div class="tl-head">
-                                <span class="tl-role">İstanbul Arel Üniversitesi</span>
-                                <span class="tl-date">2007 — 2010</span>
-                            </div>
-                            <ul>
-                                <li>Meslek Yüksekokulu — Bilgisayar Teknolojileri ve Programcılığı</li>
-                                <li>Etkinlikler: Bilge Adam, Ethical Hacking, After Effects Seminerleri</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </section>
-
-                <section class="block">
-                    <h3 class="block-title">Sertifikalar</h3>
-                    <ul class="cert-list">
-                        <li>
-                            <strong>Advanced Certificate in Information Systems Management</strong>
-                            <span class="muted">Aptech · Mart 2008 · Yeterlilik Kimliği: 02934</span>
-                        </li>
-                    </ul>
-                </section>
-
-                <section class="block">
-                    <h3 class="block-title">Yetenekler</h3>
-                    <ul class="tags tags-block">
-                        <li>HTML5</li><li>CSS3</li><li>SCSS</li><li>JavaScript</li>
-                        <li>Vue.js</li><li>Angular</li><li>AngularJS</li><li>React</li>
-                        <li>Ionic</li><li>jQuery</li><li>Bootstrap</li><li>Semantic UI</li>
-                        <li>Symfony Blade</li><li>REST API</li><li>UI/UX</li>
-                    </ul>
-                </section>
-
-                <section class="block">
-                    <h3 class="block-title">Diller</h3>
-                    <ul class="lang-list">
-                        <li><strong>Türkçe</strong> <span class="muted">Anadil</span></li>
-                        <li><strong>İngilizce</strong> <span class="muted">Profesyonel iş seviyesi</span></li>
-                    </ul>
-                </section>
-
-                <section class="block">
-                    <h3 class="block-title">İletişim</h3>
-                    <ul class="contact">
-                        <li><span>E-posta</span><a href="mailto:alidumanpr@gmail.com">alidumanpr@gmail.com</a></li>
-                        <li><span>Konum</span>İstanbul / Bahçelievler</li>
-                        <li><span>LinkedIn</span><a href="https://tr.linkedin.com/in/alidumandev" target="_blank" rel="noopener">linkedin.com/in/alidumandev</a></li>
-                        <li><span>Web</span><a href="https://aliduman.github.io" target="_blank" rel="noopener">aliduman.github.io</a></li>
-                    </ul>
-                </section>
+            <div class="hero-foot reveal">
+                <span class="year">©<span data-year></span></span>
+                <a class="scroll-hint" href="#about" aria-label="Hakkımda bölümüne git">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                </a>
             </div>
+        </section>
 
-            <!-- English content -->
-            <div class="lang-content lang-en">
-                <section class="block">
-                    <p class="lead">I'm an Istanbul-based front-end developer who enjoys continuously self-improving. Over nearly 12 years I've built training and corporate experience across website design and maintenance, web-app coding and testing, and planning and executing online business initiatives — supporting teams and projects in design and UX along the way.</p>
-                    <p class="lead">In my developer bag: Angular, Vue.js, React, Ionic, jQuery, Bootstrap, and Semantic UI.</p>
-                </section>
+        <section class="bio section-pad" id="about">
+            <div class="container">
+                <span class="section-label reveal">/Hakkımda</span>
+                <div class="bio-grid">
+                    <h2 class="display reveal">Merhaba!</h2>
+                    <div class="bio-copy reveal">
+                        <p>İstanbul'da yaşayan, 2012'den bu yana dijital ürünler geliştiren bir front-end developer'ım.</p>
+                        <p>Ajans ve ürün şirketlerinde edindiğim deneyimi; sürdürülebilir arayüz mimarileri, modern web teknolojileri ve kullanıcı deneyimi odağında birleştiriyorum.</p>
+                        <a class="pill-link" href="mailto:alidumanpr@gmail.com">
+                            İletişime geç
+                            <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M7 17 17 7M17 7H7M17 7v10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <section class="block">
-                    <h3 class="block-title">Experience</h3>
-                    <ol class="timeline">
-                        <li>
-                            <div class="tl-head">
-                                <span class="tl-role">sahibinden.com — Frontend Developer</span>
-                                <span class="tl-date">Jul 2021 — Present</span>
+        <section class="statement section-pad" aria-label="Çalışma yaklaşımı">
+            <div class="container">
+                <p class="statement-text reveal">Fikirden yayına. Hızlı, sade ve gerçek kullanımda karşılığını veren dijital ürünler.</p>
+            </div>
+        </section>
+
+        <section class="services section-pad" id="services">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Uzmanlık</h2>
+                    <span>/04</span>
+                </div>
+                <div class="service-list">
+                    <article class="service-card reveal">
+                        <span class="service-no">01</span>
+                        <svg class="service-art service-art-code" viewBox="0 0 320 180" aria-hidden="true">
+                            <path class="art-grid" d="M0 30h320M0 75h320M0 120h320M0 165h320M50 0v180M110 0v180M170 0v180M230 0v180M290 0v180"/>
+                            <path class="art-primary" d="m118 54-38 36 38 36M202 54l38 36-38 36M178 38l-34 104"/>
+                            <circle class="art-dot" cx="265" cy="35" r="5"/>
+                        </svg>
+                        <h3>Frontend Development</h3>
+                        <ul>
+                            <li>UI Development</li>
+                            <li>Responsive Layouts</li>
+                            <li>Web Performance</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal">
+                        <span class="service-no">02</span>
+                        <svg class="service-art service-art-migration" viewBox="0 0 320 180" aria-hidden="true">
+                            <circle class="art-orbit" cx="160" cy="90" r="64"/>
+                            <path class="art-primary" d="M74 76c7-39 42-68 84-68 28 0 53 13 69 33l-4-30M227 41l-31 1M246 104c-7 39-42 68-84 68-28 0-53-13-69-33l4 30M93 139l31-1"/>
+                            <circle class="art-dot" cx="160" cy="90" r="18"/>
+                            <path class="art-core" d="m152 90 7 7 13-16"/>
+                        </svg>
+                        <h3>Modernizasyon & Migration</h3>
+                        <ul>
+                            <li>AngularJS Migration</li>
+                            <li>Architecture</li>
+                            <li>Refactoring</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal">
+                        <span class="service-no">03</span>
+                        <svg class="service-art service-art-system" viewBox="0 0 320 180" aria-hidden="true">
+                            <rect class="art-panel" x="54" y="24" width="212" height="132" rx="16"/>
+                            <rect class="art-primary art-block" x="76" y="48" width="68" height="36" rx="8"/>
+                            <circle class="art-dot" cx="190" cy="66" r="18"/>
+                            <rect class="art-secondary art-block" x="218" y="48" width="26" height="36" rx="7"/>
+                            <rect class="art-secondary art-block" x="76" y="104" width="102" height="28" rx="8"/>
+                            <rect class="art-primary art-block" x="190" y="104" width="54" height="28" rx="8"/>
+                        </svg>
+                        <h3>Design Systems</h3>
+                        <ul>
+                            <li>Web Components</li>
+                            <li>UI Consistency</li>
+                            <li>Reusable Patterns</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal">
+                        <span class="service-no">04</span>
+                        <svg class="service-art service-art-product" viewBox="0 0 320 180" aria-hidden="true">
+                            <rect class="art-panel" x="64" y="20" width="192" height="140" rx="18"/>
+                            <path class="art-wire" d="M88 48h72M88 68h46M88 102h144M88 124h92"/>
+                            <rect class="art-primary" x="178" y="44" width="54" height="36" rx="10"/>
+                            <path class="art-cursor" d="m217 98 25 14-12 4-5 12z"/>
+                            <circle class="art-dot" cx="83" cy="29" r="4"/>
+                        </svg>
+                        <h3>Product UI/UX</h3>
+                        <ul>
+                            <li>Interface Design</li>
+                            <li>Prototype</li>
+                            <li>Product Thinking</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="work section-pad" id="work">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Öne Çıkan Çalışmalar</h2>
+                    <span>/Seçki</span>
+                </div>
+                <div class="work-grid">
+                    <article class="work-card work-card-wide reveal">
+                        <a class="work-link" href="https://www.sahibinden.com/i/sanal-tur#" target="_blank" rel="noopener" aria-label="Sanal Tur projesini aç">
+                            <div class="work-visual tour-visual">
+                                <img src="images/sanal-tur.webp" alt="Sanal Tur uygulamasında Koridor ve Antre görünümü" loading="lazy" width="1200" height="760">
+                                <span class="work-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" width="24" height="24"><path d="M7 17 17 7M17 7H7M17 7v10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                                </span>
                             </div>
-                            <ul>
-                                <li>Delivered end-to-end front-end work across domains owned by multiple cross-functional teams, shipping sustainable solutions within agile workflows.</li>
-                                <li>Played an active role in migrating legacy AngularJS projects to a modern major Angular release.</li>
-                                <li>Designed and built the user interface of an ML-powered Virtual Tour application.</li>
-                                <li>Led the transformation of the Virtual Tour product into a standalone SaaS offering under a separate brand; re-architected the application from the ground up with Vue.js.</li>
-                                <li>Contributed to the enterprise Web Components library developed as part of the Sahibinden Design System transformation.</li>
-                                <li>Owned all UI development for Sahideko AI, an AI-powered photo decoration product.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="tl-head">
-                                <span class="tl-role">Garaj Sepeti — Front End Developer</span>
-                                <span class="tl-date">Jul 2019 — Jul 2021</span>
+                            <div class="work-info">
+                                <h3>Sanal Tur</h3>
+                                <p>Makine öğrenmesi destekli ürün arayüzü · Vue.js ile SaaS dönüşümü</p>
                             </div>
-                            <ul>
-                                <li>Led the front-end development of Araba.com, Tasit.com, and the Garaj Sepeti Marketplace platforms.</li>
-                                <li>Worked on Symfony Blade templates with HTML, CSS, JavaScript, and jQuery; used ReactJS to maintain legacy features and resolve defects.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="tl-head">
-                                <span class="tl-role">Aeccion Bilişim Inc. — Front End Developer</span>
-                                <span class="tl-date">May 2017 — Jul 2019</span>
+                        </a>
+                    </article>
+                    <article class="work-card reveal">
+                        <a class="work-link" href="https://www.sahibinden.com/i/sahideko" target="_blank" rel="noopener" aria-label="SAHİDEKO projesini aç">
+                            <div class="work-visual ai-visual">
+                                <img src="images/sahideko-compare.webp" alt="SAHİDEKO ile dekorasyonu değiştirilmiş salonun önce ve sonra karşılaştırması" loading="lazy" width="800" height="610">
+                                <span class="work-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" width="24" height="24"><path d="M7 17 17 7M17 7H7M17 7v10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                                </span>
                             </div>
-                            <ul>
-                                <li>Developed an AngularJS-based e-commerce application, a CMS built on Angular 2–7, and several single-page web applications.</li>
-                                <li>Built websites from the ground up for construction and architectural-design firms as part of their corporate branding initiatives.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="tl-head">
-                                <span class="tl-role">Erkam Medya Bilişim Hizmetleri — Web Developer</span>
-                                <span class="tl-date">May 2015 — May 2017</span>
+                            <div class="work-info">
+                                <h3>SAHİDEKO</h3>
+                                <p>Yapay zekâ destekli fotoğraf düzenleme ürününün arayüz geliştirmesi</p>
                             </div>
-                            <ul>
-                                <li>Contributed to the front-end development of enterprise ERP web applications.</li>
-                                <li>Stack: HTML, CSS, SCSS, Bootstrap, JavaScript, jQuery, WP-REST API, Ionic, and Angular 1.x.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="tl-head">
-                                <span class="tl-role">KALITE GROUP — Front End Developer</span>
-                                <span class="tl-date">Sep 2014 — May 2015</span>
-                            </div>
-                            <ul>
-                                <li>Prepared mockup interfaces and converted PSD designs into HTML, CSS, and JavaScript implementations within the agency.</li>
-                                <li>Conducted cross-browser compatibility testing and produced reports on speed and performance optimizations.</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </section>
+                        </a>
+                    </article>
+                    <article class="work-card reveal">
+                        <div class="work-visual system-visual" aria-hidden="true">
+                            <span class="system-shape"></span>
+                            <span class="system-shape"></span>
+                            <span class="system-shape"></span>
+                            <span class="system-shape"></span>
+                            <span class="system-shape"></span>
+                            <span class="system-shape"></span>
+                        </div>
+                        <div class="work-info">
+                            <h3>Sahibinden Design System</h3>
+                            <p>Kurumsal Web Components kütüphanesine katkı</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="work-more reveal">
+                    <button class="work-more-toggle" type="button" aria-expanded="false" aria-controls="additional-work">
+                        <span>Daha fazla çalışma</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                    </button>
+                    <div class="additional-work" id="additional-work" hidden>
+                        <article class="company-work-card">
+                            <div class="company-work-head"><span>2019—2021</span><h3>Garaj Sepeti</h3></div>
+                            <p>Araba.com, Tasit.com ve Garaj Sepeti Marketplace ürünlerinin arayüz geliştirme süreçlerinde görev aldım. Mevcut ürünleri sürdürürken yeni özellikler, hata düzeltmeleri ve responsive deneyimler geliştirdim.</p>
+                            <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>jQuery</li><li>React</li></ul>
+                        </article>
+                        <article class="company-work-card">
+                            <div class="company-work-head"><span>2017—2019</span><h3>Aeccion Bilişim A.Ş.</h3></div>
+                            <p>AngularJS tabanlı e-ticaret uygulaması, Angular 2–7 ile CMS çözümleri ve çeşitli SPA projeleri geliştirdim. Kurumsal markalar için web arayüzlerini tasarımdan çalışan ürüne taşıdım.</p>
+                            <ul><li>AngularJS</li><li>Angular</li><li>JavaScript</li><li>SPA</li><li>CMS</li></ul>
+                        </article>
+                        <article class="company-work-card">
+                            <div class="company-work-head"><span>2015—2017</span><h3>Erkam Medya</h3></div>
+                            <p>Kurumsal ERP web uygulamalarının ön yüz geliştirme süreçlerine katkı sağladım; web ve hibrit mobil arayüzlerde yeniden kullanılabilir çözümler ürettim.</p>
+                            <ul><li>AngularJS</li><li>Ionic</li><li>SCSS</li><li>Bootstrap</li><li>REST API</li></ul>
+                        </article>
+                        <article class="company-work-card">
+                            <div class="company-work-head"><span>2014—2015</span><h3>KALITE GROUP</h3></div>
+                            <p>Ajans projelerinde mockup ve PSD tasarımlarını responsive web arayüzlerine dönüştürdüm; tarayıcı uyumluluğu ve temel performans iyileştirmeleri üzerinde çalıştım.</p>
+                            <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Responsive UI</li></ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <section class="block">
-                    <h3 class="block-title">Education</h3>
-                    <ol class="timeline">
-                        <li>
-                            <div class="tl-head">
-                                <span class="tl-role">İstanbul Arel University</span>
-                                <span class="tl-date">2007 — 2010</span>
-                            </div>
-                            <ul>
-                                <li>Technical Vocational School — Computer Technologies and Programming</li>
-                                <li>Activities: Bilge Adam, Ethical Hacking, After Effects Seminars</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </section>
+        <section class="experience section-pad" id="experience">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Özgeçmiş</h2>
+                    <span>/2012—Bugün</span>
+                </div>
+                <div class="resume-intro reveal">
+                    <p>Farklı ölçeklerdeki ekiplerde; e-ticaret, otomotiv ve ilan platformları için kullanıcı odaklı web ürünleri geliştirdim. Teknik yaklaşımım, güçlü arayüz temellerini ürün düşüncesi ve sürekli öğrenmeyle bir araya getiriyor.</p>
+                    <dl class="resume-stats" aria-label="Kariyer özeti">
+                        <div><dt>14+</dt><dd>yıl deneyim</dd></div>
+                        <div><dt>7</dt><dd>şirket + freelance</dd></div>
+                        <div><dt>37</dt><dd>LinkedIn yeteneği</dd></div>
+                    </dl>
+                </div>
+                <div class="experience-list">
+                    <article class="experience-row reveal">
+                        <div class="experience-meta"><span class="experience-date">Tem 2021—Bugün</span><span>İstanbul, Türkiye</span></div>
+                        <div class="experience-copy"><h3>sahibinden.com</h3><p class="experience-role">Frontend Developer</p><p>Türkiye'nin önde gelen teknoloji platformlarından birinde ürün arayüzleri ve sürdürülebilir frontend çözümleri geliştiriyorum.</p></div>
+                    </article>
+                    <article class="experience-row reveal">
+                        <div class="experience-meta"><span class="experience-date">Tem 2019—Tem 2021</span><span>Altunizade, İstanbul</span></div>
+                        <div class="experience-copy"><h3>Garaj Sepeti</h3><p class="experience-role">Front End Developer</p><p>Araba.com dahil otomotiv pazarına yönelik ürünlerin web arayüzlerinde çalıştım.</p><ul class="experience-tags" aria-label="Garaj Sepeti teknolojileri"><li>jQuery</li><li>HTML5</li><li>Frontend UI</li></ul></div>
+                    </article>
+                    <article class="experience-row reveal">
+                        <div class="experience-meta"><span class="experience-date">May 2017—Tem 2019</span><span>İstanbul, Türkiye</span></div>
+                        <div class="experience-copy"><h3>Aeccion Bilişim A.Ş.</h3><p class="experience-role">Front End Developer</p><p>AngularJS tabanlı e-ticaret uygulamaları, Angular 2–7 ile CMS çözümleri ve tek sayfa web uygulamaları geliştirdim.</p><ul class="experience-tags" aria-label="Aeccion teknolojileri"><li>AngularJS</li><li>Angular</li><li>JavaScript</li><li>SPA</li></ul></div>
+                    </article>
+                    <article class="experience-row reveal">
+                        <div class="experience-meta"><span class="experience-date">May 2015—May 2017</span><span>Üsküdar, İstanbul</span></div>
+                        <div class="experience-copy"><h3>Erkam Medya Bilişim Hizmetleri</h3><p class="experience-role">Web Developer</p><p>ERP web uygulamalarının frontend geliştirme çalışmalarını yürüttüm.</p><ul class="experience-tags" aria-label="Erkam Medya teknolojileri"><li>AngularJS</li><li>Ionic</li><li>Responsive UI</li></ul></div>
+                    </article>
+                    <article class="experience-row reveal">
+                        <div class="experience-meta"><span class="experience-date">Eyl 2014—May 2015</span><span>İstanbul, Türkiye</span></div>
+                        <div class="experience-copy"><h3>KALITE GROUP</h3><p class="experience-role">Front End Developer</p><p>Ajans projeleri için arayüz taslakları hazırladım ve bunları çalışan web arayüzlerine dönüştürdüm.</p></div>
+                    </article>
+                    <article class="experience-row reveal">
+                        <div class="experience-meta"><span class="experience-date">May 2013—Haz 2014</span><span>İstanbul, Türkiye</span></div>
+                        <div class="experience-copy"><h3>4 Kalem</h3><p class="experience-role">Front End Developer</p><p>Butik web tasarımlarını HTML, CSS ve JavaScript kullanarak çalışan arayüzlere dönüştürdüm; projelerin kullanıcı deneyimi tasarımlarına katkı sağladım.</p><ul class="experience-tags" aria-label="4 Kalem teknolojileri"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>UI/UX</li></ul></div>
+                    </article>
+                    <article class="experience-row reveal">
+                        <div class="experience-meta"><span class="experience-date">Haz 2012—May 2013</span><span>Üsküdar, İstanbul</span></div>
+                        <div class="experience-copy"><h3>Freelance</h3><p class="experience-role">Freelance Full-Stack Developer</p><p>Kurumsal markalar için web siteleri geliştirdim; PSD tasarımlarını arayüze dönüştürdüm ve saf PHP ile hafif içerik yönetim sistemleri hazırladım.</p><ul class="experience-tags" aria-label="Freelance teknolojileri"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>CMS</li></ul></div>
+                    </article>
+                    <article class="experience-row reveal">
+                        <div class="experience-meta"><span class="experience-date">Şub 2012—May 2012</span><span>İstanbul, Türkiye</span></div>
+                        <div class="experience-copy"><h3>Kariyer.net</h3><p class="experience-role">Application Testing Specialist</p><p>Kariyer.net'in yenilenen web sitesi için görsel, teknik ve deneyimsel hata kontrolleri gerçekleştirdim; bulguları dokümante ederek uyumluluk süreçlerine katkı sağladım.</p><ul class="experience-tags" aria-label="Kariyer.net uzmanlıkları"><li>UI Testing</li><li>UX Testing</li><li>QA</li><li>Documentation</li></ul></div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-                <section class="block">
-                    <h3 class="block-title">Certifications</h3>
-                    <ul class="cert-list">
-                        <li>
-                            <strong>Advanced Certificate in Information Systems Management</strong>
-                            <span class="muted">Aptech · Mar 2008 · Credential ID: 02934</span>
-                        </li>
-                    </ul>
-                </section>
+        <section class="credentials section-pad" aria-labelledby="credentials-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2 id="credentials-title">Eğitim</h2>
+                    <span>/Temeller</span>
+                </div>
+                <div class="credentials-grid">
+                    <article class="credential-card reveal">
+                        <span class="credential-kicker">2007—2010 · İstanbul</span>
+                        <h3>İstanbul Arel Üniversitesi</h3>
+                        <p>Meslek Yüksekokulu<br>Bilgisayar Teknolojileri ve Programlama</p>
+                        <span class="credential-note">Bilge Adam, Ethical Hacking ve After Effects seminerleri</span>
+                    </article>
+                    <article class="credential-card credential-card-dark reveal">
+                        <span class="credential-kicker">Mar 2008</span>
+                        <h3>Advanced Certificate in Information Systems Management</h3>
+                        <p>Aptech Certificate</p>
+                        <span class="credential-note">Yeterlilik kimliği: 02934</span>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-                <section class="block">
-                    <h3 class="block-title">Skills</h3>
-                    <ul class="tags tags-block">
-                        <li>HTML5</li><li>CSS3</li><li>SCSS</li><li>JavaScript</li>
-                        <li>Vue.js</li><li>Angular</li><li>AngularJS</li><li>React</li>
-                        <li>Ionic</li><li>jQuery</li><li>Bootstrap</li><li>Semantic UI</li>
-                        <li>Symfony Blade</li><li>REST API</li><li>UI/UX</li>
-                    </ul>
-                </section>
+        <section class="stack section-pad" aria-label="Teknolojiler">
+            <div class="container">
+                <span class="section-label reveal">/Teknolojiler</span>
+                <div class="marquee" aria-label="Angular, Vue.js, React, JavaScript, HTML, CSS, SCSS">
+                    <div>ANGULAR — VUE.JS — REACT — JAVASCRIPT — HTML — CSS — SCSS —</div>
+                    <div aria-hidden="true">ANGULAR — VUE.JS — REACT — JAVASCRIPT — HTML — CSS — SCSS —</div>
+                </div>
+            </div>
+        </section>
 
-                <section class="block">
-                    <h3 class="block-title">Languages</h3>
-                    <ul class="lang-list">
-                        <li><strong>Turkish</strong> <span class="muted">Native</span></li>
-                        <li><strong>English</strong> <span class="muted">Professional working</span></li>
-                    </ul>
-                </section>
+        <section class="thoughts section-pad" id="thoughts">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2>Yazılar</h2>
+                    <span>/Yakında</span>
+                </div>
+                <div class="thoughts-empty reveal">
+                    <p>Frontend geliştirme, ürün arayüzleri ve tasarım sistemleri üzerine notlar burada yayınlanacak.</p>
+                    <span>İlk yazı hazırlanıyor.</span>
+                </div>
+            </div>
+        </section>
 
-                <section class="block">
-                    <h3 class="block-title">Contact</h3>
-                    <ul class="contact">
-                        <li><span>Email</span><a href="mailto:alidumanpr@gmail.com">alidumanpr@gmail.com</a></li>
-                        <li><span>Location</span>İstanbul / Bahçelievler, Türkiye</li>
-                        <li><span>LinkedIn</span><a href="https://tr.linkedin.com/in/alidumandev" target="_blank" rel="noopener">linkedin.com/in/alidumandev</a></li>
-                        <li><span>Web</span><a href="https://aliduman.github.io" target="_blank" rel="noopener">aliduman.github.io</a></li>
-                    </ul>
-                </section>
+        <section class="community section-pad" id="community" aria-labelledby="community-title">
+            <div class="container">
+                <button class="community-card reveal" type="button" aria-haspopup="dialog" aria-controls="community-modal">
+                    <span class="community-brand" aria-hidden="true">
+                        <img src="images/meetup.svg" alt="" width="72" height="72">
+                        <strong>Meetup</strong>
+                    </span>
+                    <span class="community-copy">
+                        <span class="section-label">/Topluluk</span>
+                        <strong id="community-title">Konferanslar ve etkinlikler</strong>
+                        <span>2014'ten bu yana katıldığım 74 teknoloji ve topluluk etkinliğini görüntüle.</span>
+                    </span>
+                    <span class="community-action" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="28" height="28"><path d="M7 17 17 7M17 7H7M17 7v10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </span>
+                </button>
+            </div>
+        </section>
+
+        <section class="contact section-pad" id="contact">
+            <div class="container">
+                <div class="contact-intro reveal">
+                    <span class="section-label">/İletişim</span>
+                    <h2>Konuşalım.</h2>
+                    <p>Bir projeniz ya da ihtiyaç duyduğunuz bir destek varsa bana e-posta ile ulaşabilirsiniz.</p>
+                </div>
+                <a class="email-link reveal" href="mailto:alidumanpr@gmail.com">
+                    alidumanpr@gmail.com
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32"><path d="M7 17 17 7M17 7H7M17 7v10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                </a>
+                <div class="social-links reveal">
+                    <a href="https://github.com/aliduman" target="_blank" rel="noopener">
+                        GitHub
+                        <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M7 17 17 7M17 7H7M17 7v10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/alidumandev/" target="_blank" rel="noopener">
+                        LinkedIn
+                        <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M7 17 17 7M17 7H7M17 7v10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="https://twitter.com/alidumandev" target="_blank" rel="noopener">
+                        X / Twitter
+                        <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M7 17 17 7M17 7H7M17 7v10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="https://alidumandev.wordpress.com/" target="_blank" rel="noopener">
+                        WordPress
+                        <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M7 17 17 7M17 7H7M17 7v10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <dialog class="community-modal" id="community-modal" aria-labelledby="community-modal-title">
+        <div class="community-modal-panel">
+            <header class="community-modal-head">
+                <div>
+                    <span class="community-modal-kicker"><img src="images/meetup.svg" alt="" width="28" height="28">Meetup</span>
+                    <h2 id="community-modal-title">Katıldığım etkinlikler</h2>
+                    <p>74 etkinlik · 2014—2026</p>
+                </div>
+                <button class="community-modal-close" type="button" aria-label="Etkinlik listesini kapat">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </button>
+            </header>
+            <ol class="community-event-list"></ol>
+        </div>
+    </dialog>
+
+    <footer class="footer">
+        <div class="container">
+            <h2>Ölçeklenebilir ürünler.<br>Sağlam arayüzler.</h2>
+            <div class="footer-bottom">
+                <span>Ali Duman ©<span data-year></span></span>
+                <div class="footer-controls">
+                    <div class="language-switch" role="group" aria-label="Dil seçimi">
+                        <button type="button" data-language="tr" aria-pressed="true">TR</button>
+                        <button type="button" data-language="en" aria-pressed="false">EN</button>
+                    </div>
+                    <a href="#hero">Başa dön</a>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </footer>
 
-<script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // About modal
-    (function () {
-        const modal = document.getElementById('about-modal');
-        const openBtn = document.getElementById('open-about');
-        const closers = modal.querySelectorAll('[data-close]');
-        const langButtons = modal.querySelectorAll('[data-set-lang]');
-
-        function open() {
-            modal.hidden = false;
-            requestAnimationFrame(() => modal.classList.add('is-open'));
-            document.body.style.overflow = 'hidden';
-            modal.querySelector('.modal-close').focus();
-        }
-        function close() {
-            modal.classList.remove('is-open');
-            setTimeout(() => { modal.hidden = true; }, 250);
-            document.body.style.overflow = '';
-            openBtn.focus();
-        }
-        function setLang(lang) {
-            modal.dataset.lang = lang;
-            langButtons.forEach(b => b.classList.toggle('active', b.dataset.setLang === lang));
-        }
-
-        openBtn.addEventListener('click', open);
-        closers.forEach(c => c.addEventListener('click', close));
-        langButtons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.setLang)));
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modal.hidden) close();
-        });
-    })();
-</script>
-
-<script type="importmap">
-{
-    "imports": {
-        "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
-    }
-}
-</script>
-<script type="module">
-import * as THREE from 'three';
-
-const canvas = document.getElementById('bg-canvas');
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.setSize(window.innerWidth, window.innerHeight);
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
-camera.position.z = 6;
-
-// Background image plane (aliduman.png as a fixed, screen-locked backdrop)
-const BG_DIST = 16;
-const bgPlane = new THREE.Mesh(
-    new THREE.PlaneGeometry(1, 1),
-    new THREE.MeshBasicMaterial({ color: 0x0b0b2a, transparent: true, opacity: 0 })
-);
-bgPlane.position.set(0, 0, -BG_DIST);
-camera.add(bgPlane);
-scene.add(camera);
-
-const loader = new THREE.TextureLoader();
-loader.load('images/aliduman.png', (texture) => {
-    texture.colorSpace = THREE.SRGBColorSpace;
-    const aspect = texture.image.width / texture.image.height;
-    bgPlane.material = new THREE.MeshBasicMaterial({
-        map: texture,
-        transparent: true,
-        opacity: 0.35,
-        depthWrite: false
-    });
-    sizeBgPlane(aspect);
-});
-
-function sizeBgPlane(aspect) {
-    const viewH = 2 * Math.tan((camera.fov * Math.PI / 180) / 2) * BG_DIST;
-    const viewW = viewH * camera.aspect;
-    const imgAspect = aspect || 16 / 9;
-    let w = viewW;
-    let h = viewW / imgAspect;
-    if (h < viewH) { h = viewH; w = viewH * imgAspect; }
-    bgPlane.scale.set(w, h, 1);
-}
-
-// Wireframe icosahedron
-const geometry = new THREE.IcosahedronGeometry(2, 1);
-const wire = new THREE.LineSegments(
-    new THREE.WireframeGeometry(geometry),
-    new THREE.LineBasicMaterial({ color: 0x7c5cff, transparent: true, opacity: 0.55 })
-);
-scene.add(wire);
-
-const innerSphere = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(1.4, 0),
-    new THREE.MeshBasicMaterial({ color: 0x00d4ff, wireframe: true, transparent: true, opacity: 0.25 })
-);
-scene.add(innerSphere);
-
-// Particle field
-const particleCount = window.innerWidth < 600 ? 600 : 1400;
-const positions = new Float32Array(particleCount * 3);
-const colors = new Float32Array(particleCount * 3);
-const palette = [new THREE.Color(0x7c5cff), new THREE.Color(0x00d4ff), new THREE.Color(0xff5ca8)];
-
-for (let i = 0; i < particleCount; i++) {
-    const r = 8 + Math.random() * 14;
-    const theta = Math.random() * Math.PI * 2;
-    const phi = Math.acos(2 * Math.random() - 1);
-    positions[i * 3]     = r * Math.sin(phi) * Math.cos(theta);
-    positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-    positions[i * 3 + 2] = r * Math.cos(phi);
-
-    const c = palette[Math.floor(Math.random() * palette.length)];
-    colors[i * 3]     = c.r;
-    colors[i * 3 + 1] = c.g;
-    colors[i * 3 + 2] = c.b;
-}
-
-const particleGeo = new THREE.BufferGeometry();
-particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-particleGeo.setAttribute('color',    new THREE.BufferAttribute(colors, 3));
-
-const particles = new THREE.Points(particleGeo, new THREE.PointsMaterial({
-    size: 0.05,
-    vertexColors: true,
-    transparent: true,
-    opacity: 0.9,
-    depthWrite: false,
-    blending: THREE.AdditiveBlending
-}));
-scene.add(particles);
-
-// Mouse parallax
-const target = { x: 0, y: 0 };
-const current = { x: 0, y: 0 };
-
-window.addEventListener('pointermove', (e) => {
-    target.x = (e.clientX / window.innerWidth - 0.5) * 0.6;
-    target.y = (e.clientY / window.innerHeight - 0.5) * 0.6;
-}, { passive: true });
-
-window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    const map = bgPlane.material.map;
-    sizeBgPlane(map ? map.image.width / map.image.height : null);
-});
-
-const clock = new THREE.Clock();
-
-function animate() {
-    const t = clock.getElapsedTime();
-    const speed = reduceMotion ? 0 : 1;
-
-    wire.rotation.x = t * 0.15 * speed;
-    wire.rotation.y = t * 0.22 * speed;
-    innerSphere.rotation.x = -t * 0.18 * speed;
-    innerSphere.rotation.y =  t * 0.12 * speed;
-    particles.rotation.y = t * 0.03 * speed;
-
-    current.x += (target.x - current.x) * 0.05;
-    current.y += (target.y - current.y) * 0.05;
-    camera.position.x = current.x * 2;
-    camera.position.y = -current.y * 2;
-    camera.lookAt(0, 0, 0);
-
-    renderer.render(scene, camera);
-    requestAnimationFrame(animate);
-}
-animate();
-</script>
+    <script src="data/meetup-events.js"></script>
+    <script src="script.js"></script>
+    <script src="hero-canvas.js"></script>
 </body>
 </html>
